@@ -1,9 +1,11 @@
 import React, { FC } from 'react';
+import { Person } from './components/Person';
 
 const App: FC = () => {
 
   const name: string = 'David';
   const age: number = 36;
+  const email: string = 'davidthekoa@gmail.com'
   const isMarried: boolean = false;
 
   const getName = (name: string): number | string => {
@@ -17,13 +19,13 @@ const App: FC = () => {
 
   console.log(getName('David'))
 
-  
+  const handleClick = () => {
+    alert('I Love You!')
+  }
 
   return (
     <div className="App">
-      {name}
-      {age}
-      {isMarried}
+      <Person name={name} age={age} email={email} handleClick={handleClick}/>
     </div>
   );
 }
