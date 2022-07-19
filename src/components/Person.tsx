@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, ChangeEvent } from 'react';
 interface Props {
   name: string;
   age: number;
@@ -13,12 +13,16 @@ export const Person: FC < Props > = ( { name , age , email } ) => {
     alert(`Hello ${name} from ${country}!`)
   }
 
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => setCountry(event.target.value)
+
   return (
     <div>
       <p>{name}</p>
       <p>{email}</p>
       <p>{age}</p>
-      <input placeholder='Write down here your country...' onChange={event => setCountry(event.target.value)}/>
+      <input placeholder='Write down here your country...' 
+        onChange={handleChange}
+      />
       <button onClick={handleClick}>ClickMe</button>
       <p>{country}</p>
     </div>
