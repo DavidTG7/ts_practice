@@ -19,13 +19,10 @@ const App: FC = () => {
 
   console.log(getName('David'))
 
-  const handleClick = () => {
-    alert('I Love You!')
-  }
 
   return (
     <div className="App">
-      <Person name={name} age={age} email={email} handleClick={handleClick}/>
+      <Person name={name} age={age} email={email} />
     </div>
   );
 }
